@@ -211,6 +211,41 @@
     .agent .cad.build { color: var(--warning); }
     .agent .role { font-size: 12.5px; line-height: 1.45; color: var(--ink-muted); }
 
+    /* ── End-to-end pipeline ── */
+    .pipeline { display: flex; align-items: stretch; }
+    .pipeline .stage {
+      flex: 1; border: 1px solid var(--line); border-radius: 4px;
+      background: var(--paper-elevated); padding: 18px 16px;
+      display: flex; flex-direction: column;
+      text-transform: none; font-family: var(--font-body);
+      align-self: stretch; margin: 0;
+    }
+    .pipeline .sx {
+      font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.10em;
+      color: var(--ink-subtle); margin-bottom: 10px;
+    }
+    .pipeline .st {
+      font-family: var(--font-display); font-size: 26px; line-height: 1.0;
+      color: var(--ink); margin-bottom: 9px;
+    }
+    .pipeline .sd { font-size: 12px; line-height: 1.45; color: var(--ink-muted); }
+    .stage-arrow {
+      display: flex; align-items: center; padding: 0 9px;
+      color: var(--ink-subtle); font-size: 15px; flex: 0 0 auto;
+    }
+
+    /* ── Founder both-sides cards ── */
+    .sides { display: flex; flex-direction: column; gap: 14px; }
+    .side {
+      border: 1px solid var(--line); border-radius: 4px;
+      background: var(--paper-elevated); padding: 16px 18px;
+    }
+    .side-h {
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--ink); margin-bottom: 6px;
+    }
+    .side-d { font-size: 13px; line-height: 1.5; color: var(--ink-muted); }
+
     /* ── Briefing (day-in-the-life) ── */
     .brief {
       border: 1px solid var(--line-strong); border-radius: 4px;
@@ -497,56 +532,43 @@
     <!-- ─────────── SLIDE 5 · THE WORKFORCE ─────────── -->
     <section class="slide">
       <div class="s-head">
-        <span class="mono-label"><span class="ix">04</span> — THE WORKFORCE</span>
+        <span class="mono-label"><span class="ix">04</span> — END TO END</span>
         <span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span>
       </div>
-      <h2 class="sm">The entire operation runs on an autonomous agent fleet.</h2>
-      <p class="lede" style="margin-top: 12px; max-width: 1080px; font-size: 17px;">Outreach, briefing, roster strategy, trend-watching, wellbeing — every step of UGC management is handled by autonomous agents working in parallel, on a cadence. Add creators, not headcount; the fleet scales with the roster.</p>
-      <div class="agents" style="margin-top: 18px;">
-        <div class="agent">
-          <div class="top">
-            <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><line x1="12" y1="6" x2="12" y2="18"/><line x1="6" y1="12" x2="18" y2="12"/></svg></span>
-            <span><span class="nm">Orchestration</span><span class="cad live">always on</span></span>
-          </div>
-          <div class="role">Routes every read and write across the typed-tool surface. Persistent memory. Owns what surfaces in the daily brief.</div>
+      <h2 class="sm">One system runs the whole UGC program — end to end.</h2>
+      <p class="lede" style="margin-top: 12px; max-width: 1080px; font-size: 17px;">From sourcing and onboarding creators, to coaching every video, to turning the top performers into paid ads — the agents run each step, the manager approves.</p>
+      <div class="pipeline" style="margin-top: 26px;">
+        <div class="stage">
+          <div class="sx">01</div>
+          <div class="st">Source</div>
+          <div class="sd">Public application links and a creator marketplace surface and match creators by niche, audience, and past performance.</div>
         </div>
-        <div class="agent">
-          <div class="top">
-            <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4 L20 12 L12 20 L4 12 Z" stroke-linejoin="round"/></svg></span>
-            <span><span class="nm">Meeting briefs</span><span class="cad live">per meeting</span></span>
-          </div>
-          <div class="role">Generates a 1:1 brief the moment a meeting lands — performance, timeline, personal context, agenda.</div>
+        <span class="stage-arrow">→</span>
+        <div class="stage">
+          <div class="sx">02</div>
+          <div class="st">Onboard</div>
+          <div class="sd">Self-serve in the iOS app — Sign in with Apple, handles, rates. Tracked accounts start polling on the next cycle.</div>
         </div>
-        <div class="agent">
-          <div class="top">
-            <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 11.5a8 8 0 1 1-2.3-5.3" stroke-linecap="round"/><path d="M20 4 v4 h-4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <span><span class="nm">Creator outreach</span><span class="cad live">daily</span></span>
-          </div>
-          <div class="role">Drafts outreach DMs in each creator's preferred channel — the dog by name, the overdue brief. Cadenced, never spammy.</div>
+        <span class="stage-arrow">→</span>
+        <div class="stage">
+          <div class="sx">03</div>
+          <div class="st">Coach</div>
+          <div class="sd">Every video gets an AI teardown — hook, retention, sentiment — and a 24/7 coach proposes the next iteration.</div>
         </div>
-        <div class="agent">
-          <div class="top">
-            <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8.5"/></svg></span>
-            <span><span class="nm">Roster strategy</span><span class="cad live">every 6h + weekly</span></span>
-          </div>
-          <div class="role">Portfolio reviews and weekly ROI-per-creator reports. Surfaces cut-candidates and proposes tier changes.</div>
+        <span class="stage-arrow">→</span>
+        <div class="stage">
+          <div class="sx">04</div>
+          <div class="st">Scale</div>
+          <div class="sd">Trend-watch surfaces winning hooks and audio across the roster; briefs and content suggestions flow to creators automatically.</div>
         </div>
-        <div class="agent">
-          <div class="top">
-            <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 5 L19 12 L8 19 Z" stroke-linejoin="round"/></svg></span>
-            <span><span class="nm">Trend scouting</span><span class="cad live">continuous</span></span>
-          </div>
-          <div class="role">Watches every video across the roster and competitors — emerging hooks, on-screen text, trending audio from your best performers.</div>
-        </div>
-        <div class="agent">
-          <div class="top">
-            <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4 L20.5 19 L3.5 19 Z" stroke-linejoin="round"/></svg></span>
-            <span><span class="nm">Wellbeing watch</span><span class="cad build">in build</span></span>
-          </div>
-          <div class="role">Tracks tone across every meeting and DM. Flags creators trending negative before they churn.</div>
+        <span class="stage-arrow">→</span>
+        <div class="stage">
+          <div class="sx">05</div>
+          <div class="st">Amplify</div>
+          <div class="sd">Top-performing UGC is promoted into paid — Meta and TikTok ads, launched and optimised by the system.</div>
         </div>
       </div>
-      <p class="body" style="margin-top: 22px; max-width: 980px;"><strong>One foundation.</strong> Every agent runs autonomously on the same primitives — typed tools, approval-gated writes, persistent memory, full audit — and is exposed over MCP to any external agent stack.</p>
+      <p class="closer" style="margin-top: 26px;">Every step is agent-run and human-approved. ROI and transparent payouts close the loop — and fund the next cohort.</p>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>05 / 13</span></div>
     </section>
 
@@ -757,22 +779,29 @@
         <span class="mono-label"><span class="ix">11</span> — TEAM</span>
         <span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span>
       </div>
-      <h2>One founder. A fleet of <span class="em-i">agents.</span></h2>
+      <h2>He's run the agency <span class="em-i">and</span> been the creator.</h2>
       <div class="founder" style="margin-top: 32px;">
         <div class="bio">
           <div class="name">Jacob Sprake</div>
           <div class="title">Founder · SPR Labs Ltd</div>
-          <p>Solo, AI-first founder. Designed, built and shipped SortCreators end-to-end — schema, agent fleet, web app and iOS — in ten weeks, with an agent-augmented workflow.</p>
-          <p><b>28+ apps in production</b> across the SPR Labs studio. The thesis the product sells — one operator steering a fleet of agents — is the thesis the company is already run on.</p>
+          <p>Ran a marketing &amp; UGC agency since the age of <b>15</b>, and spent <b>three years as a UGC creator</b>. He has felt both pains first-hand — the manager drowning in tabs, and the creator left in silence between calls.</p>
+          <p>Now a solo, AI-first founder, he designed and shipped SortCreators end-to-end — schema, agents, web and iOS — building the tool he always wished existed, on both sides.</p>
           <div class="creds">
-            <span class="cred">LSE</span>
-            <span class="cred">University of London</span>
+            <span class="cred">London School of Economics</span>
+            <span class="cred">UGC agency since 15</span>
+            <span class="cred">UGC creator · 3 yrs</span>
             <span class="cred">SPR Labs · 28+ apps</span>
-            <span class="cred">Apple Developer · SPR Labs Ltd</span>
           </div>
         </div>
-        <div>
-          <p class="closer">"I run SPR Labs the way SortCreators runs a roster — me, steering; agents, executing. This product is that operating model, packaged."</p>
+        <div class="sides">
+          <div class="side">
+            <div class="side-h">The agency side</div>
+            <div class="side-d">Ran the roster — the spreadsheets, the chasing, the payout reconciliation. The busywork SortCreators removes.</div>
+          </div>
+          <div class="side">
+            <div class="side-h">The creator side</div>
+            <div class="side-d">Made the content — the silence between calls, the vague feedback, the waiting on payment. The gaps the app closes.</div>
+          </div>
         </div>
       </div>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>12 / 13</span></div>
