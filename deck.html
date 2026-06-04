@@ -184,6 +184,8 @@
       color: var(--ink); margin-bottom: 10px;
     }
     .bet .d { font-size: 13.5px; line-height: 1.5; color: var(--ink-muted); }
+    .bet .bi { color: var(--ink); margin-bottom: 14px; }
+    .bet .bi svg { width: 24px; height: 24px; display: block; }
 
     /* ── Agents ── */
     .agents { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
@@ -247,6 +249,11 @@
       text-transform: uppercase; color: var(--ink); margin-bottom: 6px;
     }
     .side-d { font-size: 13px; line-height: 1.5; color: var(--ink-muted); }
+    .edu { display: flex; align-items: center; gap: 22px; margin-top: 26px; }
+    .edu .edu-lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-subtle); }
+    .edu img { display: block; width: auto; }
+    .edu-lse { height: 26px; }
+    .edu-uol { height: 46px; }
 
     /* ── Briefing (day-in-the-life) ── */
     .brief {
@@ -484,19 +491,22 @@
       <h2>Three curves crossed <span class="em-i">at once.</span></h2>
       <div class="stack" style="margin-top: 30px;">
         <div class="bet">
+          <div class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/></svg></div>
           <div class="k">01 · Capability</div>
           <div class="t">Agents got good</div>
-          <div class="d">LLM agents crossed from demo to dependable — tool use, persistent memory, and multi-step autonomy are production-grade in 2026. The labour can finally be automated, not just summarised.</div>
+          <div class="d">Tool use, memory, multi-step autonomy — all production-grade in 2026. The labour can finally be automated, not just summarised.</div>
         </div>
         <div class="bet">
+          <div class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
           <div class="k">02 · Demand</div>
           <div class="t">UGC went mainstream</div>
-          <div class="d">200M+ creators worldwide, 45M+ professional. Influencer marketing hit ~$33B in 2026, compounding ~25% a year. Every brand now runs a creator program — and needs to operate one.</div>
+          <div class="d">200M+ creators. A ~$33B market growing ~25% a year. Every brand now runs UGC — and someone must operate it.</div>
         </div>
         <div class="bet">
+          <div class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></div>
           <div class="k">03 · Incumbency</div>
           <div class="t">The tools predate AI</div>
-          <div class="d">Grin, CreatorIQ and Modash were architected as CRMs before agents existed. You can't retrofit an agent-native data model onto a form-shaped database. The category is up for grabs.</div>
+          <div class="d">Grin, CreatorIQ, Modash are pre-AI CRMs. You can't retrofit agent-native onto a form. The category is up for grabs.</div>
         </div>
       </div>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>03 / 12</span></div>
@@ -560,10 +570,13 @@
         <div class="bio">
           <div class="name">Jacob Sprake</div>
           <div class="title">Founder · SPR Labs Ltd</div>
-          <p>Ran a marketing &amp; UGC agency since the age of <b>15</b>, and spent <b>three years as a UGC creator</b>. He has felt both pains first-hand — the manager drowning in tabs, and the creator left in silence between calls.</p>
-          <p>Now a solo, AI-first founder, he designed and shipped SortCreators end-to-end — schema, agents, web and iOS — building the tool he always wished existed, on both sides.</p>
-          <div class="creds">
-            <span class="cred">London School of Economics</span>
+          <p>Ran a marketing &amp; UGC agency since <b>15</b>. Three years a <b>UGC creator</b>. He's lived both pains — the buried manager, the ignored creator — and built the fix solo, end to end.</p>
+          <div class="edu">
+            <span class="edu-lbl">Educated at</span>
+            <img src="assets/lse.svg" alt="London School of Economics" class="edu-lse" />
+            <img src="assets/uol.svg" alt="University of London" class="edu-uol" />
+          </div>
+          <div class="creds" style="margin-top: 20px;">
             <span class="cred">UGC agency since 15</span>
             <span class="cred">UGC creator · 3 yrs</span>
             <span class="cred">SPR Labs · 28+ apps</span>
@@ -615,11 +628,11 @@
           <h3>Manager web</h3>
           <div class="sub">sortcreators.com</div>
           <ul>
-            <li><b>Daily briefing</b> — overdue items, going-cold creators, momentum movers, tone flags, birthdays</li>
-            <li><b>Relationship Health 0–100</b> per creator — touch · response · delivery · tone</li>
-            <li><b>Action items</b> auto-extracted from every meeting transcript</li>
-            <li><b>Agent chat</b> over the typed-tool surface + MCP server for any external agent</li>
-            <li><b>Usage-rights tracker</b>, brand-safety scan, transparent CPM + bonus payouts</li>
+            <li><b>Daily briefing</b> — what needs you today</li>
+            <li><b>Relationship Health 0–100</b> per creator</li>
+            <li><b>Action items</b> from every call transcript</li>
+            <li><b>Agent chat</b> + MCP for any external agent</li>
+            <li><b>Usage rights</b>, brand-safety, transparent payouts</li>
           </ul>
         </div>
         <div class="prod next">
@@ -627,11 +640,11 @@
           <h3>Creator iOS app</h3>
           <div class="sub">8-screen onboarding · Sign in with Apple</div>
           <ul>
-            <li><b>24/7 AI coach</b> — "Why is engagement dropping?" "What hook lands harder here?"</li>
-            <li><b>Per-video teardown</b> — hook strength, retention curve, comment sentiment, next iteration</li>
-            <li><b>Live brief + payout status</b> — what's owed, when, why</li>
-            <li><b>Content suggestions</b> from what their audience actually converts on</li>
-            <li><b>Direct line</b> to their manager and the agents</li>
+            <li><b>24/7 AI coach</b>, always on call</li>
+            <li><b>Per-video teardown</b> + next iteration</li>
+            <li><b>Live brief + payout status</b></li>
+            <li><b>Content suggestions</b> that convert</li>
+            <li><b>Direct line</b> to manager + agents</li>
           </ul>
         </div>
       </div>
@@ -755,8 +768,8 @@
         </div>
       </div>
       <div class="grid-2" style="margin-top: 22px; gap: 28px;">
-        <p class="body"><strong>Land and expand.</strong> Start on Pro, grow into Studio as the roster scales. The creator app drives bottoms-up word-of-mouth between managers — a built-in acquisition loop the incumbents don't have.</p>
-        <p class="body"><strong>Structurally cheaper to run.</strong> ~$70/mo infra per org today. Because the fleet does the operating, we serve the SMB and mid-market that $2,500/mo incumbents (Tagger) can't reach — at software gross margins.</p>
+        <p class="body"><strong>Land and expand.</strong> Start on Pro, grow into Studio as rosters scale. The creator app drives word-of-mouth between managers — a built-in acquisition loop.</p>
+        <p class="body"><strong>Structurally cheaper to run.</strong> ~$70/mo infra per org. The fleet lets us serve the SMB + mid-market that $2,500/mo incumbents can't — at software margins.</p>
       </div>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>10 / 12</span></div>
     </section>
