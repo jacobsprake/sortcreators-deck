@@ -9,9 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     /* ───────────────────────────────────────────────────────────────
-       SortCreators · "Editorial Operations Console" design system
-       Light/paper · Instrument Serif + Geist + Geist Mono · OKLCH
-       Purple accent ≤2× per slide · hairlines · zero gradients/shadows
+       SortCreators · investor deck · sortcreators.com design language
+       Warm paper #FBFAF7 · Bricolage Grotesque 800 + Geist + Geist Mono
+       Violet #7C5CFF accent · aurora glow on cover · rounded cards · hairlines
        ─────────────────────────────────────────────────────────────── */
     :root {
       --font-display: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
@@ -180,6 +180,10 @@
       font-size: 14px; line-height: 1.4; color: var(--ink); font-weight: 400;
     }
     .panel li:first-child { border-top: 0; }
+    /* slide 2 is the densest: tighten rows + gaps so the closer clears the footer */
+    .s2 .lede { margin-top: 10px; }
+    .s2 .panel li { padding: 6px 0; line-height: 1.35; }
+    .s2 .panel h3 { margin-bottom: 6px; }
 
     /* ── Bet / why-now cards ── */
     .stack { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -468,7 +472,7 @@
       <div>
         <span class="wordmark"><span class="mk" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span><span class="wm">SortCreators</span></span>
         <h1>Your creator program, <span class="em-i">run and growing.</span></h1>
-        <div class="sub">Sourced, coached, scaled. <b>You approve, it delivers.</b></div>
+        <div class="sub">Sourced, coached, scaled. <b>Run for you, end to end.</b></div>
       </div>
       <div class="meta"><span class="tag">INVESTOR BRIEF · PRE-SEED · 2026</span><span>Jacob Sprake · jacob@sprake.co · sortcreators.com</span></div>
     </section>
@@ -480,7 +484,6 @@
         <div class="panel"><h3>The manager</h3><ul><li>8 tabs. 150+ outreach DMs a week.</li><li>Hours hunting for new creators.</li><li>Reconciling payouts by hand.</li></ul></div>
         <div class="panel flagged"><h3>The creator</h3><ul><li>A brief, then weeks of silence.</li><li>Vague feedback. Late pay.</li><li>No coaching, no path to better.</li></ul></div>
       </div>
-      <p class="closer flat" style="margin-top: 28px;">Incumbents hand you a tool. The grind stays, the program stalls.</p>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>02 / 10</span></div>
     </section>
     <!-- SLIDE 3 · ENGINE -->
@@ -489,15 +492,14 @@
       <h2 class="sm">Built to run your program, not to be operated by you.</h2>
       <div class="grid-2" style="margin-top: 26px;">
         <div class="panel"><h3>Every other tool</h3><ul><li>A form you type into.</li><li>Waits for you to act.</li><li>You are still the operator.</li></ul></div>
-        <div class="panel flagged"><h3>SortCreators</h3><ul><li>A fleet of agents acts for you.</li><li>Typed, approval-gated, MCP-native engine.</li><li>It runs. You approve.</li></ul></div>
+        <div class="panel flagged"><h3>SortCreators</h3><ul><li>A fleet of agents acts for you.</li><li>Typed, auditable, MCP-native engine.</li><li>It runs the program for you.</li></ul></div>
       </div>
-      <p class="closer" style="margin-top: 26px;">So you get a program that runs, not a tool to run.</p>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>03 / 10</span></div>
     </section>
     <!-- SLIDE 4 · LIFECYCLE -->
     <section class="slide">
       <div class="s-head"><span class="mono-label"><span class="ix">03</span> · END TO END</span><span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span></div>
-      <h2 class="sm">We run the whole lifecycle. You just approve.</h2>
+      <h2 class="sm">We run the whole lifecycle, end to end.</h2>
       <div class="pipeline" style="margin-top: 36px;">
         <div class="stage"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="sx">01</div><div class="st">Source</div><div class="sd">Match from 200M+ creators.</div><div class="pstat live">Live</div></div>
         <span class="stage-arrow">→</span>
@@ -509,7 +511,6 @@
         <span class="stage-arrow">→</span>
         <div class="stage"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div><div class="sx">05</div><div class="st">Amplify</div><div class="sd">Top posts become Meta + TikTok ads.</div><div class="pstat soon">Q3</div></div>
       </div>
-      <p class="closer" style="margin-top: 32px;">Every step runs for you. Revenue funds the next cohort.</p>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>04 / 10</span></div>
     </section>
     <!-- SLIDE 5 · COACHING -->
@@ -543,15 +544,15 @@
       <div class="s-head"><span class="mono-label"><span class="ix">05</span> · WHY WE WIN</span><span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span></div>
       <h2 class="sm">Incumbents sell you a tool. We deliver the result.</h2>
       <table class="matrix" style="margin-top: 22px;">
-        <thead><tr><th class="cap" style="text-align:left;">What you actually get</th><th class="us">SortCreators</th><th>Grin /<br/>CreatorIQ</th><th>Modash</th><th>Tagger</th></tr></thead>
+        <thead><tr><th class="cap" style="text-align:left;">Capability</th><th class="us">SortCreators</th><th>GRIN</th><th>CreatorIQ</th><th>Modash</th></tr></thead>
         <tbody>
-          <tr><td class="cap">A program that runs itself</td><td class="us"><span class="yes them">✓</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td></tr>
-          <tr><td class="cap">Agents do the work, not you</td><td class="us"><span class="yes them">✓</span></td><td><span class="part">chatbot</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td></tr>
-          <tr><td class="cap">Every creator coached to perform</td><td class="us"><span class="yes them">✓</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td></tr>
-          <tr><td class="cap">You buy the outcome, not seats</td><td class="us"><span class="yes them">✓</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td></tr>
+          <tr><td class="cap">Agents operate the program, not you</td><td class="us"><span class="yes them">✓</span></td><td><span class="part">Gia*</span></td><td><span class="part">assist</span></td><td><span class="part">assist</span></td></tr>
+          <tr><td class="cap">Agent-native, not AI bolted on a CRM</td><td class="us"><span class="yes them">✓</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td></tr>
+          <tr><td class="cap">Coaches every creator to grow</td><td class="us"><span class="yes them">✓</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td></tr>
+          <tr><td class="cap">Entry price</td><td class="us"><span class="part">$99/mo</span></td><td><span class="part">$399/mo</span></td><td><span class="part">~$25k/yr</span></td><td><span class="part">$199/mo</span></td></tr>
         </tbody>
       </table>
-      <p class="closer flat" style="margin-top: 20px;">Copying us means rebuilding their core. They will not.</p>
+      <p class="src" style="margin-top: 14px;">*GRIN's Gia (2025) markets agentic AI, but it automates brand-side tasks on a human CRM; CreatorIQ and Modash AI is assistive. No incumbent is agent-native or coaches the creator. Sources: vendor sites, G2.</p>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>06 / 10</span></div>
     </section>
     <!-- SLIDE 7 · MARKET -->
@@ -624,7 +625,6 @@
         <div class="b"><div class="pc">+2</div><div class="h">First hires</div><div class="d">One GTM, one engineer.</div></div>
       </div>
       <p class="body" style="margin-top: 22px; max-width: 1040px;"><strong>18 months buys:</strong> 100+ paying programs and the revenue a Series A wants. The product is already shipped, so the raise de-risks distribution, not the build.</p>
-      <p class="closer" style="margin-top: 20px;">The operator behind every creator program.</p>
       <div class="s-foot"><span>Jacob Sprake · jacob@sprake.co · sortcreators.com</span><span>10 / 10</span></div>
     </section>
 
