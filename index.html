@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SortCreators — Investor Brief · 2026</title>
+  <title>SortCreators · Investor Brief · 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     /* ───────────────────────────────────────────────────────────────
-       SortCreators — "Editorial Operations Console" design system
+       SortCreators · "Editorial Operations Console" design system
        Light/paper · Instrument Serif + Geist + Geist Mono · OKLCH
        Purple accent ≤2× per slide · hairlines · zero gradients/shadows
        ─────────────────────────────────────────────────────────────── */
@@ -145,6 +145,15 @@
       color: var(--ink-subtle);
     }
     .cover .meta .tag { color: var(--ink); }
+    .cover-art {
+      position: absolute; inset: 0; display: flex;
+      align-items: center; justify-content: flex-end;
+      padding-right: 40px; color: var(--ink);
+      opacity: 0.7; pointer-events: none; z-index: 0;
+    }
+    .cover-art svg { width: 560px; height: 560px; display: block; }
+    .cover h1 { max-width: 760px; }
+    .cover > div:not(.cover-art) { position: relative; z-index: 1; }
 
     /* ── Generic grids ── */
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
@@ -433,6 +442,33 @@
 
     <!-- ─────────── SLIDE 1 · COVER ─────────── -->
     <section class="slide cover">
+      <div class="cover-art" aria-hidden="true">
+        <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" stroke-width="1">
+            <circle cx="300" cy="300" r="95" opacity="0.20"/>
+            <circle cx="300" cy="300" r="165" opacity="0.17"/>
+            <circle cx="300" cy="300" r="235" opacity="0.13"/>
+            <g opacity="0.18">
+              <line x1="300" y1="300" x2="300" y2="135"/>
+              <line x1="300" y1="300" x2="452" y2="232"/>
+              <line x1="300" y1="300" x2="190" y2="200"/>
+              <line x1="300" y1="300" x2="465" y2="395"/>
+              <line x1="300" y1="300" x2="362" y2="468"/>
+              <line x1="300" y1="300" x2="150" y2="402"/>
+            </g>
+            <g opacity="0.6" stroke-width="1.4">
+              <circle cx="300" cy="135" r="9"/>
+              <path d="M452 218 L466 232 L452 246 L438 232 Z" stroke-linejoin="round"/>
+              <path d="M190 188 L202 208 L178 208 Z" stroke-linejoin="round"/>
+              <circle cx="465" cy="395" r="9"/>
+              <circle cx="465" cy="395" r="3.5"/>
+              <g stroke-width="1.3"><line x1="141" y1="402" x2="159" y2="402"/><line x1="150" y1="393" x2="150" y2="411"/></g>
+            </g>
+            <circle cx="300" cy="300" r="5.5" fill="currentColor" stroke="none"/>
+          </g>
+          <circle cx="362" cy="468" r="6.5" fill="var(--accent)" stroke="none"/>
+        </svg>
+      </div>
       <div>
         <span class="wordmark">
           <span class="mk" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span>
@@ -442,7 +478,7 @@
         <div class="sub">Built for agents. <b>Not bolted on.</b></div>
       </div>
       <div class="meta">
-        <span class="tag">INVESTOR BRIEF — PRE-SEED · 2026</span>
+        <span class="tag">INVESTOR BRIEF · PRE-SEED · 2026</span>
         <span>Jacob Sprake · jacob@sprake.co · sortcreators.com</span>
       </div>
     </section>
@@ -450,7 +486,7 @@
     <!-- ─────────── SLIDE 2 · PROBLEM ─────────── -->
     <section class="slide">
       <div class="s-head">
-        <span class="mono-label"><span class="ix">01</span> — THE PROBLEM</span>
+        <span class="mono-label"><span class="ix">01</span> · THE PROBLEM</span>
         <span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span>
       </div>
       <h2>Every UGC management tool is a nightmare for <span class="em-i">both</span> parties.</h2>
@@ -459,7 +495,7 @@
         <div class="panel">
           <h3>The manager's week</h3>
           <ul>
-            <li>Eight tabs open — Google Sheets, Gmail, Slack, Instagram + TikTok DMs, Notion, Calendly, PayPal, DocuSign</li>
+            <li>Eight tabs open: Google Sheets, Gmail, Slack, Instagram + TikTok DMs, Notion, Calendly, PayPal, DocuSign</li>
             <li>Chasing creators for content; chasing brands for approvals</li>
             <li>Manually reconciling payouts</li>
             <li>Remembering whose dog is named Bagel</li>
@@ -478,14 +514,14 @@
           </ul>
         </div>
       </div>
-      <p class="closer flat" style="margin-top: 26px;">Incumbents — Grin, CreatorIQ, Whalar — are databases with a chatbot bolted on. The human still does all the work.</p>
+      <p class="closer flat" style="margin-top: 26px;">Incumbents (Grin, CreatorIQ, Whalar) are databases with a chatbot bolted on. The human still does all the work.</p>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>02 / 13</span></div>
     </section>
 
     <!-- ─────────── SLIDE 3 · WHY NOW ─────────── -->
     <section class="slide">
       <div class="s-head">
-        <span class="mono-label"><span class="ix">02</span> — WHY NOW</span>
+        <span class="mono-label"><span class="ix">02</span> · WHY NOW</span>
         <span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span>
       </div>
       <h2>Three curves crossed <span class="em-i">at once.</span></h2>
@@ -494,13 +530,13 @@
           <div class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/></svg></div>
           <div class="k">01 · Capability</div>
           <div class="t">Agents got good</div>
-          <div class="d">Tool use, memory, multi-step autonomy — all production-grade in 2026. The labour can finally be automated, not just summarised.</div>
+          <div class="d">Tool use, memory, multi-step autonomy, all production-grade in 2026. The labour can finally be automated, not just summarised.</div>
         </div>
         <div class="bet">
           <div class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
           <div class="k">02 · Demand</div>
           <div class="t">UGC went mainstream</div>
-          <div class="d">200M+ creators. A ~$33B market growing ~25% a year. Every brand now runs UGC — and someone must operate it.</div>
+          <div class="d">200M+ creators. A ~$33B market growing ~25% a year. Every brand now runs UGC, and someone must operate it.</div>
         </div>
         <div class="bet">
           <div class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></div>
@@ -515,10 +551,10 @@
     <!-- ─────────── SLIDE 4 · END TO END (SOLUTION) ─────────── -->
     <section class="slide">
       <div class="s-head">
-        <span class="mono-label"><span class="ix">03</span> — END TO END</span>
+        <span class="mono-label"><span class="ix">03</span> · END TO END</span>
         <span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span>
       </div>
-      <h2 class="sm">One system runs the whole UGC lifecycle — end to end.</h2>
+      <h2 class="sm">One system runs the whole UGC lifecycle, end to end.</h2>
       <div class="pipeline" style="margin-top: 44px;">
         <div class="stage">
           <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
@@ -531,7 +567,7 @@
           <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></div>
           <div class="sx">02</div>
           <div class="st">Onboard</div>
-          <div class="sd">Self-serve in the iOS app — live in minutes.</div>
+          <div class="sd">Self-serve in the iOS app, live in minutes.</div>
         </div>
         <span class="stage-arrow">→</span>
         <div class="stage">
@@ -555,23 +591,23 @@
           <div class="sd">Top UGC → Meta + TikTok ads.</div>
         </div>
       </div>
-      <p class="closer" style="margin-top: 44px;">Agent-run, human-approved — and the loop funds the next cohort.</p>
+      <p class="closer" style="margin-top: 44px;">Agent-run, human-approved, and the loop funds the next cohort.</p>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>04 / 13</span></div>
     </section>
 
     <!-- ─────────── SLIDE 6 · A DAY IN THE LIFE ─────────── -->
     <section class="slide">
       <div class="s-head">
-        <span class="mono-label"><span class="ix">04</span> — A DAY IN THE LIFE</span>
+        <span class="mono-label"><span class="ix">04</span> · A DAY IN THE LIFE</span>
         <span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span>
       </div>
       <h2 class="sm">Monday, 9am. The fleet has already done the week's busywork.</h2>
       <div class="brief" style="margin-top: 22px;">
-        <div class="row"><span class="who">Maya</span> — meeting in 47m. <span class="agent-tag">Brief</span> ready. Trending <span class="num-up">+22%</span>, 1.4M views. Mentioned her sister's wedding is June 12. &nbsp;<span class="pill warn">4d overdue · brand-fit doc</span></div>
-        <div class="row"><span class="who">Tom</span> — 12 days dark. <span class="agent-tag">Outreach</span> drafted a check-in DM in Telegram: <span class="q">"Saw the kitchen reset hit 300k — congrats. Quick one: how's the move to Lisbon going?"</span></div>
-        <div class="row"><span class="who">Trend-watch</span> spotted a trend — 3 of your top-10 over-index on the "kitchen reset" hook. Audio variant up <span class="num-up">340%</span> on TikTok this week. Two competitors started running it Friday.</div>
-        <div class="row"><span class="who">Overnight</span> — Outreach sent 15 chases, 9 replies queued. &nbsp;<span class="pill ok">3 approvals waiting</span></div>
-        <div class="row"><span class="who">Roster strategy</span> — 6-hour review: 4 promotions, 2 demotions, 1 cut-candidate. Weekly ROI report shipped to your inbox. One click each to confirm.</div>
+        <div class="row"><span class="who">Maya</span> · meeting in 47m. <span class="agent-tag">Brief</span> ready. Trending <span class="num-up">+22%</span>, 1.4M views. Mentioned her sister's wedding is June 12. &nbsp;<span class="pill warn">4d overdue · brand-fit doc</span></div>
+        <div class="row"><span class="who">Tom</span> · 12 days dark. <span class="agent-tag">Outreach</span> drafted a check-in DM in Telegram: <span class="q">"Saw the kitchen reset hit 300k, congrats. Quick one: how's the move to Lisbon going?"</span></div>
+        <div class="row"><span class="who">Trend-watch</span> spotted a trend: 3 of your top-10 over-index on the "kitchen reset" hook. Audio variant up <span class="num-up">340%</span> on TikTok this week. Two competitors started running it Friday.</div>
+        <div class="row"><span class="who">Overnight</span> · Outreach sent 15 chases, 9 replies queued. &nbsp;<span class="pill ok">3 approvals waiting</span></div>
+        <div class="row"><span class="who">Roster strategy</span> · 6-hour review: 4 promotions, 2 demotions, 1 cut-candidate. Weekly ROI report shipped to your inbox. One click each to confirm.</div>
       </div>
       <p class="closer" style="margin-top: 26px;">The manager has 4 decisions to make today. The fleet handled the other 47.</p>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>05 / 13</span></div>
@@ -580,18 +616,18 @@
     <!-- ─────────── SLIDE 7 · TWO-SIDED ─────────── -->
     <section class="slide">
       <div class="s-head">
-        <span class="mono-label"><span class="ix">05</span> — TWO-SIDED</span>
+        <span class="mono-label"><span class="ix">05</span> · TWO-SIDED</span>
         <span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span>
       </div>
       <h2 class="sm">Manager web, shipped. Creator iOS, <span class="em-i">next.</span></h2>
-      <p class="lede" style="margin-top: 12px;">Every CRM-first incumbent treats the creator as a row. We treat them as a person — 24/7 coaching and full visibility into their own data.</p>
+      <p class="lede" style="margin-top: 12px;">Every CRM-first incumbent treats the creator as a row. We treat them as a person: 24/7 coaching and full visibility into their own data.</p>
       <div class="grid-2" style="margin-top: 22px; align-items: stretch;">
         <div class="prod">
           <span class="stage shipped">● Shipped · live in production</span>
           <h3>Manager web</h3>
           <div class="sub">sortcreators.com</div>
           <ul>
-            <li><b>Daily briefing</b> — what needs you today</li>
+            <li><b>Daily briefing</b>: what needs you today</li>
             <li><b>Relationship Health 0–100</b> per creator</li>
             <li><b>Action items</b> from every call transcript</li>
             <li><b>Agent chat</b> + MCP for any external agent</li>
@@ -618,10 +654,10 @@
     <!-- ─────────── SLIDE 11 · TRACTION ─────────── -->
     <section class="slide">
       <div class="s-head">
-        <span class="mono-label"><span class="ix">06</span> — TRACTION</span>
+        <span class="mono-label"><span class="ix">06</span> · TRACTION</span>
         <span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span>
       </div>
-      <h2 class="sm">Built and shipped — solo, in 10 weeks.</h2>
+      <h2 class="sm">Built and shipped solo, in 10 weeks.</h2>
       <div class="kpis" style="grid-template-columns: repeat(4, 1fr); margin-top: 26px;">
         <div class="kpi"><div class="v">9</div><div class="l">agents live · 24/7</div></div>
         <div class="kpi"><div class="v">84<span style="font-size:24px">+</span></div><div class="l">agent skills in registry</div></div>
@@ -634,43 +670,43 @@
         <div class="kpi"><div class="v sm">iOS</div><div class="l">creator app · TestFlight</div></div>
         <div class="kpi"><div class="v sm">~$70<span style="font-size:18px">/mo</span></div><div class="l">infra cost per org</div></div>
       </div>
-      <p class="closer" style="margin-top: 28px;">Pre-revenue, public launch imminent — but the product is real, deep, and shipping. <span class="em-i">Velocity is the proof.</span></p>
+      <p class="closer" style="margin-top: 28px;">Pre-revenue, public launch imminent, but the product is real, deep, and shipping. <span class="em-i">Velocity is the proof.</span></p>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>07 / 13</span></div>
     </section>
 
     <!-- ─────────── SLIDE · THE INSIGHT ─────────── -->
     <section class="slide">
       <div class="s-head">
-        <span class="mono-label"><span class="ix">07</span> — THE INSIGHT</span>
+        <span class="mono-label"><span class="ix">07</span> · THE INSIGHT</span>
         <span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span>
       </div>
       <h2 class="sm">You can't retrofit agent-native.</h2>
-      <p class="lede" style="margin-top: 12px; max-width: 1000px; font-size: 17px;">Incumbents bolt a chatbot onto a database built for humans. We built the data model for agents from line one — the foundation, not a feature you add later.</p>
+      <p class="lede" style="margin-top: 12px; max-width: 1000px; font-size: 17px;">Incumbents bolt a chatbot onto a database built for humans. We built the data model for agents from line one: the foundation, not a feature you add later.</p>
       <div class="grid-2" style="margin-top: 26px;">
         <div class="panel">
           <h3>Bolt-on chatbot</h3>
           <ul>
             <li>Form-shaped database, built for humans to type into</li>
             <li>Memory dies at refresh</li>
-            <li>Saves five minutes — the busywork stays</li>
+            <li>Saves five minutes. The busywork stays</li>
           </ul>
         </div>
         <div class="panel flagged">
           <h3>Agent-native</h3>
           <ul>
-            <li>Schema built for agent reads — typed, provenance on every fact</li>
+            <li>Schema built for agent reads: typed, provenance on every fact</li>
             <li>Persistent memory, approval-gated writes, full audit</li>
             <li>The whole operation runs itself</li>
           </ul>
         </div>
       </div>
-      <p class="closer flat" style="margin-top: 24px;">The wedge is architectural — you can't copy it with a sidebar.</p>
+      <p class="closer flat" style="margin-top: 24px;">The wedge is architectural. You can't copy it with a sidebar.</p>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>08 / 13</span></div>
     </section>
     <!-- ─────────── SLIDE 8 · WHY WE WIN ─────────── -->
     <section class="slide">
       <div class="s-head">
-        <span class="mono-label"><span class="ix">08</span> — WHY WE WIN</span>
+        <span class="mono-label"><span class="ix">08</span> · WHY WE WIN</span>
         <span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span>
       </div>
       <h2 class="sm">The only agent-native operator in the category.</h2>
@@ -686,14 +722,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td class="cap">Agent-native data model</td><td class="us"><span class="yes them">✓</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td></tr>
-          <tr><td class="cap">24/7 autonomous agent fleet</td><td class="us"><span class="yes them">✓</span></td><td><span class="part">chatbot</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td></tr>
-          <tr><td class="cap">Per-video AI hook analysis</td><td class="us"><span class="yes them">✓</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="part">tags</span></td></tr>
-          <tr><td class="cap">Semantic search over transcripts</td><td class="us"><span class="yes them">✓</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td></tr>
-          <tr><td class="cap">Grounded operator chat (cited)</td><td class="us"><span class="yes them">✓</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td></tr>
-          <tr><td class="cap">Transparent payout rules</td><td class="us"><span class="yes them">✓</span></td><td><span class="part">partial</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">—</span></td></tr>
-          <tr><td class="cap">Multi-tenant RBAC at SMB price</td><td class="us"><span class="yes them">✓</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="part">partial</span></td><td><span class="no">—</span></td></tr>
-          <tr><td class="cap">Creator-side app</td><td class="us"><span class="yes them">◐ Q3</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td></tr>
+          <tr><td class="cap">Agent-native data model</td><td class="us"><span class="yes them">✓</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td></tr>
+          <tr><td class="cap">24/7 autonomous agent fleet</td><td class="us"><span class="yes them">✓</span></td><td><span class="part">chatbot</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td></tr>
+          <tr><td class="cap">Per-video AI hook analysis</td><td class="us"><span class="yes them">✓</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="part">tags</span></td></tr>
+          <tr><td class="cap">Semantic search over transcripts</td><td class="us"><span class="yes them">✓</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td></tr>
+          <tr><td class="cap">Grounded operator chat (cited)</td><td class="us"><span class="yes them">✓</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td></tr>
+          <tr><td class="cap">Transparent payout rules</td><td class="us"><span class="yes them">✓</span></td><td><span class="part">partial</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">–</span></td></tr>
+          <tr><td class="cap">Multi-tenant RBAC at SMB price</td><td class="us"><span class="yes them">✓</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="part">partial</span></td><td><span class="no">–</span></td></tr>
+          <tr><td class="cap">Creator-side app</td><td class="us"><span class="yes them">◐ Q3</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td><td><span class="no">–</span></td></tr>
         </tbody>
       </table>
       <p class="closer flat" style="margin-top: 18px;">Incumbents can bolt on a chatbot. They can't re-pour the foundation.</p>
@@ -703,10 +739,10 @@
     <!-- ─────────── SLIDE 10 · BUSINESS MODEL ─────────── -->
     <section class="slide">
       <div class="s-head">
-        <span class="mono-label"><span class="ix">09</span> — BUSINESS MODEL</span>
+        <span class="mono-label"><span class="ix">09</span> · BUSINESS MODEL</span>
         <span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span>
       </div>
-      <h2 class="sm">SaaS margins — because the agents are the operator.</h2>
+      <h2 class="sm">SaaS margins, because the agents are the operator.</h2>
       <div class="grid-3" style="margin-top: 24px;">
         <div class="price">
           <div class="tier">Pro</div>
@@ -740,8 +776,8 @@
         </div>
       </div>
       <div class="grid-2" style="margin-top: 22px; gap: 28px;">
-        <p class="body"><strong>Land and expand.</strong> Start on Pro, grow into Studio as rosters scale. The creator app drives word-of-mouth between managers — a built-in acquisition loop.</p>
-        <p class="body"><strong>Structurally cheaper to run.</strong> ~$70/mo infra per org. The fleet lets us serve the SMB + mid-market that $2,500/mo incumbents can't — at software margins.</p>
+        <p class="body"><strong>Land and expand.</strong> Start on Pro, grow into Studio as rosters scale. The creator app drives word-of-mouth between managers, a built-in acquisition loop.</p>
+        <p class="body"><strong>Structurally cheaper to run.</strong> ~$70/mo infra per org. The fleet lets us serve the SMB + mid-market that $2,500/mo incumbents can't reach, at software margins.</p>
       </div>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>10 / 13</span></div>
     </section>
@@ -749,23 +785,23 @@
     <!-- ─────────── SLIDE 9 · MARKET / TAM ─────────── -->
     <section class="slide">
       <div class="s-head">
-        <span class="mono-label"><span class="ix">10</span> — THE MARKET</span>
+        <span class="mono-label"><span class="ix">10</span> · THE MARKET</span>
         <span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span>
       </div>
-      <h2 class="sm">A $33B market growing 25% a year — run by software that predates agents.</h2>
+      <h2 class="sm">A $33B market growing 25% a year, run by software that predates agents.</h2>
       <div style="display:grid; grid-template-columns: 1.35fr 1fr; gap: 36px; margin-top: 24px; align-items: start;">
         <div class="tsam">
           <div class="kpi">
             <div class="tier">TAM</div>
             <div class="v">$85B</div>
             <div class="l">creator &amp; influencer marketing · 2030</div>
-            <div class="d">~$33B in 2026, compounding ~25% a year — the spend our agents optimize.</div>
+            <div class="d">~$33B in 2026, compounding ~25% a year, the spend our agents optimize.</div>
           </div>
           <div class="kpi">
             <div class="tier">SAM</div>
             <div class="v sm">~$15B</div>
             <div class="l">creator-management software</div>
-            <div class="d">The tooling layer — platforms, not ad spend — for agencies &amp; brand teams.</div>
+            <div class="d">The tooling layer: platforms, not ad spend, for agencies &amp; brand teams.</div>
           </div>
           <div class="kpi">
             <div class="tier">SOM</div>
@@ -781,7 +817,7 @@
             <div class="bar-wrap"><span class="bv">$54B</span><div class="bar" style="height:76px"></div><span class="bx">2028</span></div>
             <div class="bar-wrap"><span class="bv">$85B</span><div class="bar hl" style="height:120px"></div><span class="bx">2030</span></div>
           </div>
-          <p class="body" style="margin-top: 18px;"><strong>200M+ creators</strong> worldwide, 45M+ professional. Every brand now runs UGC — and someone has to operate it.</p>
+          <p class="body" style="margin-top: 18px;"><strong>200M+ creators</strong> worldwide, 45M+ professional. Every brand now runs UGC, and someone has to operate it.</p>
         </div>
       </div>
       <p class="closer flat" style="margin-top: 20px;">Incumbents priced for the era when the <span class="em-i">manager</span> operated the tool. We priced for when the <span class="em-i">agents</span> do.</p>
@@ -792,7 +828,7 @@
     <!-- ─────────── SLIDE 5 · TEAM ─────────── -->
     <section class="slide">
       <div class="s-head">
-        <span class="mono-label"><span class="ix">11</span> — TEAM</span>
+        <span class="mono-label"><span class="ix">11</span> · TEAM</span>
         <span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span>
       </div>
       <h2>He's run the agency <span class="em-i">and</span> been the creator.</h2>
@@ -800,7 +836,7 @@
         <div class="bio">
           <div class="name">Jacob Sprake</div>
           <div class="title">Founder · SPR Labs Ltd</div>
-          <p>Ran a marketing &amp; UGC agency since <b>15</b>. Three years a <b>UGC creator</b>. He's lived both pains — the buried manager, the ignored creator — and built the fix solo, end to end.</p>
+          <p>Ran a marketing &amp; UGC agency since <b>15</b>. Three years a <b>UGC creator</b>. He's lived both pains (the buried manager, the ignored creator) and built the fix solo, end to end.</p>
           <div class="edu">
             <span class="edu-lbl">Educated at</span>
             <img src="assets/lse.svg" alt="London School of Economics" class="edu-lse" />
@@ -815,11 +851,11 @@
         <div class="sides">
           <div class="side">
             <div class="side-h">The agency side</div>
-            <div class="side-d">Ran the roster — the spreadsheets, the chasing, the payout reconciliation. The busywork SortCreators removes.</div>
+            <div class="side-d">Ran the roster: the spreadsheets, the chasing, the payout reconciliation. The busywork SortCreators removes.</div>
           </div>
           <div class="side">
             <div class="side-h">The creator side</div>
-            <div class="side-d">Made the content — the silence between calls, the vague feedback, the waiting on payment. The gaps the app closes.</div>
+            <div class="side-d">Made the content: the silence between calls, the vague feedback, the waiting on payment. The gaps the app closes.</div>
           </div>
         </div>
       </div>
@@ -829,7 +865,7 @@
     <!-- ─────────── SLIDE 11 · THE ASK ─────────── -->
     <section class="slide">
       <div class="s-head">
-        <span class="mono-label"><span class="ix">12</span> — THE RAISE</span>
+        <span class="mono-label"><span class="ix">12</span> · THE RAISE</span>
         <span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span>
       </div>
       <h2 class="sm">Raising a <span class="em-i">pre-seed</span> to turn a shipped product into a category.</h2>
@@ -852,7 +888,7 @@
         </div>
       </div>
       <p class="body" style="margin-top: 22px; max-width: 1040px;"><strong>What 18 months buys:</strong> the first 100+ paying orgs, the creator app and real payouts shipped, and the ARR run-rate that earns a Series A.</p>
-      <p class="closer" style="margin-top: 20px;">The system of record for every in-house UGC team — agents operating, humans deciding.</p>
+      <p class="closer" style="margin-top: 20px;">The system of record for every in-house UGC team: agents operating, humans deciding.</p>
       <div class="s-foot"><span>Jacob Sprake · jacob@sprake.co · sortcreators.com</span><span>13 / 13</span></div>
     </section>
 
