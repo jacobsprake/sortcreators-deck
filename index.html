@@ -437,10 +437,50 @@
       .slide:last-child { page-break-after: auto; break-after: auto; }
     }
   
-    /* ── deck-v2 additions ── */
+    /* ── deck-v2 · Arcline-punch components ── */
     .pipeline .pstat { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 9px; }
     .pstat.live { color: var(--positive); }
     .pstat.soon { color: var(--warning); }
+
+    /* big hero number */
+    .hero { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.045em; line-height: 0.9; color: var(--ink); }
+    .hero-cap { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-muted); line-height: 1.5; }
+
+    /* shipped-proof stat band */
+    .proof { display: flex; gap: 50px; flex-wrap: wrap; }
+    .proof .pv { font-family: var(--font-display); font-weight: 800; font-size: 36px; letter-spacing: -0.03em; color: var(--ink); line-height: 1; }
+    .proof .pv b { color: var(--accent); font-weight: 800; }
+    .proof .pl { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-muted); margin-top: 8px; }
+
+    /* 2x2 positioning map */
+    .quad { position: relative; width: 100%; height: 380px; }
+    .quad .ax { position: absolute; background: var(--line-strong); }
+    .quad .ax.x { left: 3%; right: 3%; top: 50%; height: 1.5px; }
+    .quad .ax.y { top: 0; bottom: 0; left: 50%; width: 1.5px; }
+    .quad .cap { position: absolute; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-subtle); }
+    .quad .nd { position: absolute; transform: translate(-50%, -50%); font-size: 15px; font-weight: 500; color: var(--ink-muted); text-align: center; white-space: nowrap; }
+    .quad .nd.us { font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: -0.02em; color: var(--accent); }
+    .quad .nd .dot { display: block; width: 9px; height: 9px; border-radius: 50%; background: var(--ink-subtle); margin: 0 auto 9px; }
+    .quad .nd.us .dot { width: 14px; height: 14px; background: var(--accent); }
+
+    /* before -> after */
+    .ba { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 30px; }
+    .ba .col { text-align: center; }
+    .ba .n { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.03em; line-height: 1; font-size: 62px; }
+    .ba .n span { font-size: 26px; letter-spacing: 0; }
+    .ba .n.bad { color: var(--ink-subtle); }
+    .ba .n.good { color: var(--accent); }
+    .ba .cl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-muted); margin-top: 14px; }
+    .ba .arr { font-size: 30px; color: var(--ink-subtle); }
+
+    /* formula */
+    .formula { font-family: var(--font-display); font-weight: 700; font-size: 22px; line-height: 1.45; letter-spacing: -0.01em; color: var(--ink-muted); }
+    .formula b { color: var(--ink); }
+
+    /* raise milestone lines */
+    .rl { font-family: var(--font-display); font-weight: 700; font-size: 27px; letter-spacing: -0.02em; color: var(--ink); display: flex; align-items: baseline; gap: 16px; }
+    .rl b { color: var(--ink); font-weight: 800; }
+    .rl .rb { color: var(--accent); font-weight: 800; font-size: 22px; }
 </style>
 </head>
 <body>
@@ -482,21 +522,29 @@
       </div>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>02 / 10</span></div>
     </section>
-    <!-- SLIDE 3 · ENGINE -->
+    <!-- SLIDE 3 · WHERE WE FIT -->
     <section class="slide">
-      <div class="s-head"><span class="mono-label"><span class="ix">02</span> · THE ENGINE</span><span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span></div>
-      <h2 class="sm">Built to run your program, not to be operated by you.</h2>
-      <div class="grid-2" style="margin-top: 26px;">
-        <div class="panel"><h3>Every other tool</h3><ul><li>A form you type into.</li><li>Waits for you to act.</li><li>You are still the operator.</li></ul></div>
-        <div class="panel flagged"><h3>SortCreators</h3><ul><li>A fleet of agents acts for you.</li><li>Typed, auditable, MCP-native engine.</li><li>Every action logged and reversible.</li></ul></div>
+      <div class="s-head"><span class="mono-label"><span class="ix">02</span> · WHERE WE FIT</span><span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span></div>
+      <h2 class="sm">Filling the gap between DIY tools and $2,500/mo agencies.</h2>
+      <div class="quad" style="margin-top: 20px;">
+        <div class="ax x"></div><div class="ax y"></div>
+        <div class="cap" style="top:-4px; left:51.5%;">Delivers the outcome</div>
+        <div class="cap" style="bottom:-4px; left:51.5%;">Just a tool</div>
+        <div class="cap" style="left:1%; top:53%;">You operate it</div>
+        <div class="cap" style="right:1%; top:53%;">It runs itself</div>
+        <div class="nd" style="left:17%; top:79%;"><span class="dot"></span>Spreadsheets + DMs</div>
+        <div class="nd" style="left:39%; top:64%;"><span class="dot"></span>GRIN · CreatorIQ</div>
+        <div class="nd" style="left:67%; top:75%;"><span class="dot"></span>ChatGPT</div>
+        <div class="nd" style="left:26%; top:24%;"><span class="dot"></span>UGC agencies</div>
+        <div class="nd us" style="left:76%; top:26%;"><span class="dot"></span>SortCreators</div>
       </div>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>03 / 10</span></div>
     </section>
     <!-- SLIDE 4 · LIFECYCLE -->
     <section class="slide">
       <div class="s-head"><span class="mono-label"><span class="ix">03</span> · END TO END</span><span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span></div>
-      <h2 class="sm">One platform, the whole lifecycle, end to end.</h2>
-      <div class="pipeline" style="margin-top: 36px;">
+      <h2 class="sm">From first DM to paid ad, run end to end.</h2>
+      <div class="pipeline" style="margin-top: 30px;">
         <div class="stage"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="sx">01</div><div class="st">Source</div><div class="sd">Match from 200M+ creators.</div><div class="pstat live">Live</div></div>
         <span class="stage-arrow">→</span>
         <div class="stage"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></div><div class="sx">02</div><div class="st">Onboard</div><div class="sd">Self-serve, live in minutes.</div><div class="pstat live">Live</div></div>
@@ -506,6 +554,12 @@
         <div class="stage"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="sx">04</div><div class="st">Scale</div><div class="sd">Top hooks, auto-briefed to the roster.</div><div class="pstat live">Live</div></div>
         <span class="stage-arrow">→</span>
         <div class="stage"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div><div class="sx">05</div><div class="st">Amplify</div><div class="sd">Top posts become Meta + TikTok ads.</div><div class="pstat soon">Q3</div></div>
+      </div>
+      <div class="proof" style="margin-top: 40px;">
+        <div class="p"><div class="pv">v1 <b>live</b></div><div class="pl">platform shipped solo</div></div>
+        <div class="p"><div class="pv">9</div><div class="pl">agents running</div></div>
+        <div class="p"><div class="pv">1,330</div><div class="pl">tests passing</div></div>
+        <div class="p"><div class="pv">~$70<span style="font-size:20px">/mo</span></div><div class="pl">infra per org</div></div>
       </div>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>04 / 10</span></div>
     </section>
@@ -533,7 +587,7 @@
     <!-- SLIDE 6 · MOAT -->
     <section class="slide">
       <div class="s-head"><span class="mono-label"><span class="ix">05</span> · WHY WE WIN</span><span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span></div>
-      <h2 class="sm">Incumbents sell you a tool. We deliver the result.</h2>
+      <h2 class="sm">No one else is agent-native. No one else coaches the creator.</h2>
       <table class="matrix" style="margin-top: 22px;">
         <thead><tr><th class="cap" style="text-align:left;">Capability</th><th class="us">SortCreators</th><th>GRIN</th><th>CreatorIQ</th><th>Modash</th></tr></thead>
         <tbody>
@@ -549,39 +603,36 @@
     <!-- SLIDE 7 · MARKET -->
     <section class="slide">
       <div class="s-head"><span class="mono-label"><span class="ix">06</span> · THE MARKET</span><span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span></div>
-      <h2 class="sm">A $33B market, still run by software that predates AI.</h2>
-      <div style="display:grid; grid-template-columns: 1.35fr 1fr; gap: 36px; margin-top: 24px; align-items: start;">
-        <div class="tsam">
-          <div class="kpi"><div class="tier">TAM</div><div class="v">$85B</div><div class="l">creator marketing · 2030</div><div class="d">~$33B today, compounding ~25% a year.</div></div>
-          <div class="kpi"><div class="tier">SAM</div><div class="v sm">~$15B</div><div class="l">the software layer</div><div class="d">Tools for agencies and brand teams.</div></div>
-          <div class="kpi"><div class="tier">SOM</div><div class="v sm">~$300M</div><div class="l">beachhead</div><div class="d">In-house UGC teams. Winnable first.</div></div>
+      <h2 class="sm">A $85B market, still run by software that predates AI.</h2>
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 30px; align-items:center;">
+        <div>
+          <div class="hero" style="font-size:148px;">$85B</div>
+          <div class="hero-cap" style="margin-top:10px;">creator marketing by 2030<br/>~$33B today, compounding ~25% a year</div>
         </div>
         <div>
-          <div class="chart">
-            <div class="bar-wrap"><span class="bv">$24B</span><div class="bar" style="height:34px"></div><span class="bx">2024</span></div>
-            <div class="bar-wrap"><span class="bv">$34B</span><div class="bar" style="height:48px"></div><span class="bx">2026</span></div>
-            <div class="bar-wrap"><span class="bv">$54B</span><div class="bar" style="height:76px"></div><span class="bx">2028</span></div>
-            <div class="bar-wrap"><span class="bv">$85B</span><div class="bar hl" style="height:120px"></div><span class="bx">2030</span></div>
-          </div>
-          <p class="body" style="margin-top: 18px;"><strong>200M+ creators.</strong> Every brand now runs UGC.</p>
+          <div class="formula"><b>~85k</b> in-house UGC teams &nbsp;&times;&nbsp; <b>~$3.5k</b> / yr &nbsp;&asymp;&nbsp; <b>$300M</b> we win first <span style="font-size:14px; color:var(--ink-subtle); font-weight:500;">(SOM)</span></div>
+          <div class="formula" style="margin-top:22px; font-size:18px;"><b>~$15B</b> creator-management software <span style="font-size:14px; color:var(--ink-subtle); font-weight:500;">(SAM)</span></div>
+          <p class="body" style="margin-top:24px; font-size:16px;"><strong>200M+ creators.</strong> Every brand now runs UGC, and someone has to operate it.</p>
         </div>
       </div>
-      <div class="src">Sources: Influencer Marketing Hub / Statista (spend, ~25% CAGR); Fortune Business Insights, Grand View Research (software layer). SOM is bottoms-up.</div>
+      <div class="src" style="margin-top: 26px;">Sources: Influencer Marketing Hub / Statista (spend, ~25% CAGR); Fortune Business Insights, Grand View Research (software layer). SOM is bottoms-up.</div>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>07 / 10</span></div>
     </section>
     <!-- SLIDE 8 · MODEL -->
     <section class="slide">
       <div class="s-head"><span class="mono-label"><span class="ix">07</span> · BUSINESS MODEL</span><span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span></div>
-      <h2 class="sm">We sell a creator program that runs and grows. Not software.</h2>
-      <div class="grid-3" style="margin-top: 24px;">
-        <div class="price"><div class="tier">Pro</div><div class="amt">$99<span> / mo</span></div><div class="who">Solo + small agencies</div><ul><li>The full program, run</li><li>5 to 50 creators</li></ul></div>
-        <div class="price mid"><div class="tier">Studio</div><div class="amt">$399<span> / mo</span></div><div class="who">Growing agencies</div><ul><li>Everything in Pro</li><li>50 to 250 creators</li></ul></div>
-        <div class="price"><div class="tier">Enterprise</div><div class="amt">Custom</div><div class="who">Brand teams + networks</div><ul><li>White-label, SSO, API</li><li>250+ creators</li></ul></div>
+      <h2 class="sm">Software margins, at 1/20th of incumbent pricing.</h2>
+      <div class="ba" style="margin-top: 28px; max-width: 720px; margin-left:auto; margin-right:auto;">
+        <div class="col"><div class="n bad">~$25k</div><div class="cl">CreatorIQ · per year · enterprise only</div></div>
+        <div class="arr">→</div>
+        <div class="col"><div class="n good">$99<span>/mo</span></div><div class="cl">SortCreators · self-serve</div></div>
       </div>
-      <div class="grid-2" style="margin-top: 22px; gap: 28px;">
-        <p class="body"><strong>You buy the result.</strong> A sourced, coached, growing roster. We grow as your program grows.</p>
-        <p class="body"><strong>Agents deliver it,</strong> so margins stay software-grade. We win the SMB and mid-market that $2,500/mo incumbents cannot touch.</p>
+      <div class="grid-3" style="margin-top: 36px;">
+        <div class="price"><div class="tier">Pro</div><div class="amt">$99<span> / mo</span></div><div class="who">Solo + small agencies · 5 to 50 creators</div></div>
+        <div class="price mid"><div class="tier">Studio</div><div class="amt">$399<span> / mo</span></div><div class="who">Growing agencies · 50 to 250 creators</div></div>
+        <div class="price"><div class="tier">Enterprise</div><div class="amt">Custom</div><div class="who">Brand teams + networks · 250+ creators</div></div>
       </div>
+      <p class="body" style="margin-top: 24px; max-width: 1040px;"><strong>Agents deliver it,</strong> so gross margins stay software-grade at ~$70/mo infra per org. We win the SMB and mid-market that $2,500/mo incumbents cannot touch.</p>
       <div class="s-foot"><span>The agent-native OS for UGC creator management</span><span>08 / 10</span></div>
     </section>
     <!-- SLIDE 9 · TEAM -->
@@ -608,14 +659,14 @@
     <!-- SLIDE 10 · RAISE -->
     <section class="slide">
       <div class="s-head"><span class="mono-label"><span class="ix">09</span> · THE RAISE</span><span class="s-brand"><span class="mark" style="color:var(--ink)"><svg viewBox="0 0 12 12"><use href="#g-sort"/></svg></span> SortCreators</span></div>
-      <h2 class="sm">Raising a <span class="em-i">pre-seed</span> to take a shipped product to market.</h2>
-      <p class="ask-amt" style="margin-top: 22px;"><span class="ph">$ ___</span> &nbsp;<span style="font-family:var(--font-mono); font-size:15px; color:var(--ink-subtle); letter-spacing:0;">pre-seed · SAFE · [valuation cap]</span></p>
-      <div class="uof" style="margin-top: 26px;">
-        <div class="b"><div class="pc">GTM</div><div class="h">Go-to-market</div><div class="d">Land the first 100 paying programs.</div></div>
-        <div class="b"><div class="pc">iOS</div><div class="h">Creator app</div><div class="d">Ship payouts, contracts, the marketplace.</div></div>
-        <div class="b"><div class="pc">+2</div><div class="h">First hires</div><div class="d">One GTM, one engineer.</div></div>
+      <h2>Raising <span class="em-i">$ ___</span> to&hellip;</h2>
+      <div style="font-family:var(--font-mono); font-size:14px; color:var(--ink-subtle); letter-spacing:0.04em; margin-top:16px;">pre-seed · SAFE · [valuation cap]</div>
+      <div style="margin-top: 40px; display:flex; flex-direction:column; gap: 24px;">
+        <div class="rl"><span class="rb">→</span><span>Land the first <b>100 paying programs</b></span></div>
+        <div class="rl"><span class="rb">→</span><span>Ship <b>creator payouts</b> and the <b>iOS app</b></span></div>
+        <div class="rl"><span class="rb">→</span><span>Hit the <b>ARR a Series A wants</b></span></div>
       </div>
-      <p class="body" style="margin-top: 22px; max-width: 1040px;"><strong>18 months buys:</strong> 100+ paying programs and the revenue a Series A wants. The product is already shipped, so the raise de-risks distribution, not the build.</p>
+      <p class="body" style="margin-top: 40px; max-width: 1040px;">The product is already shipped, so the raise de-risks distribution, not the build.</p>
       <div class="s-foot"><span>Jacob Sprake · jacob@sprake.co · sortcreators.com</span><span>10 / 10</span></div>
     </section>
 

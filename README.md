@@ -2,10 +2,9 @@
 
 The agent that runs your creator program.
 
-- **Live deck (outcome-first, 10 slides):** https://jacobsprake.github.io/sortcreators-deck/
+- **Live deck (10 slides):** https://jacobsprake.github.io/sortcreators-deck/
 - **PDF:** https://jacobsprake.github.io/sortcreators-deck/deck-v2.pdf
-- **Longer 13-slide version:** https://jacobsprake.github.io/sortcreators-deck/deck.html ([PDF](https://jacobsprake.github.io/sortcreators-deck/deck.pdf))
 
-Styled to match [sortcreators.com](https://sortcreators.com): warm paper, Bricolage Grotesque headlines, violet accent, aurora glow. Outcome-first copy, em-dash-free.
+Pre-seed deck: outcome-first, em-dash-free, big-number heroes, a 2×2 positioning map, a before→after price gap, a formula-driven TAM, and a shipped-proof stat band. Branded to [sortcreators.com](https://sortcreators.com) — warm paper, Bricolage Grotesque, violet accent.
 
 Jacob Sprake · jacob@sprake.co · [sortcreators.com](https://sortcreators.com)
